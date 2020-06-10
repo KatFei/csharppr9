@@ -1,0 +1,10 @@
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\bin\Debug\CSharpLab9-Parallel.exe.config
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\bin\Debug\CSharpLab9-Parallel.exe
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\bin\Debug\CSharpLab9-Parallel.pdb
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\obj\Debug\CSharpLab9-Parallel.csprojAssemblyReference.cache
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\obj\Debug\CSharpLab9_Parallel.PrimeSearch.resources
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\obj\Debug\CSharpLab9_Parallel.Properties.Resources.resources
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\obj\Debug\CSharpLab9-Parallel.csproj.GenerateResource.cache
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\obj\Debug\CSharpLab9-Parallel.csproj.CoreCompileInputs.cache
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\obj\Debug\CSharpLab9-Parallel.exe
+C:\Users\Екатерина\Source\Repos\KatFei\csharppr9\CSharpLab9-Parallel\CSharpLab9-Parallel\obj\Debug\CSharpLab9-Parallel.pdb
