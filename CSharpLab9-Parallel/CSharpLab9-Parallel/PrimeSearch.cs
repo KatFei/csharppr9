@@ -15,6 +15,7 @@ namespace CSharpLab9_Parallel
         int startPos = 0;
         int endPos = 0;
         int threads = 1;
+        int[] allPrimes;
         public PrimeSearch()
         {
             InitializeComponent();
@@ -52,6 +53,37 @@ namespace CSharpLab9_Parallel
             //else
             //    return Task.FromResult<object>(null);
         }
+        private void OutputPrimes(int[] primes)  //Action<int[]>  или Action<Task<int[]>>
+        {
+
+            allPrimes = primes.Concat(allPrimes).ToArray();
+            Array.Sort(allPrimes);
+
+            if (allPrimes != null)
+            {
+                foreach (int prime in allPrimes)
+                    tbPrimes.Text += prime + " ";
+            }
+            //else
+            //    return Task.FromResult<object>(null);
+        }
+
+        //private Action<Task<int[]>> OutputPrimes(Task<int[]> primes)  //Action<int[]>  или Action<Task<int[]>>
+        //{
+
+        //    allPrimes = primes.Result.Concat(allPrimes).ToArray();
+        //    Array.Sort(allPrimes);
+
+
+        //        foreach (int prime in allPrimes)
+        //            tbPrimes.Text += prime + " ";
+        //    }
+        //    else
+        //    {
+        //        tbPrimes.Text = " ";
+        //    }
+        //    //    return Task.FromResult<object>(null);
+        //}
         private void butSearch_Click(object sender, EventArgs e)
         {
             //очищаем tb
@@ -60,7 +92,7 @@ namespace CSharpLab9_Parallel
             int start = Int32.Parse(tbStart.Text);
             int end = Int32.Parse(tbEnd.Text);
             threads = (int)numUpDThreads.Value;
-            int[] allPrimes = new int[0];
+            allPrimes = new int[0];
             Task<int[]>[] tasks = null;
             //если start<end -> делим на потоки и выполняем
             //для 1..1 - +проверить при 2 потоках
@@ -88,20 +120,41 @@ namespace CSharpLab9_Parallel
                     for (int i = 0; i < threads; i++)
                     {
                         int ti = i;
-                        tasks[ti] = Task<int[]>.Run(() => SearchForPrimes(start+ti, end, threads));
-                    }
-                    Task.WaitAll(tasks);
+                        tasks[ti] = Task<int[]>.Run(() //(Task<int[]>)
+                            => SearchForPrimes(start + ti, end, threads));
+
+                        tasks[ti].ContinueWith(task =>
+                        {
+                            //MessageBox.Show("In Continue With of " + ti + " Task " + task.Result.ToArray().Length);
+                            allPrimes = task.Result.Concat(allPrimes).ToArray();
+                            Array.Sort(allPrimes);
+                            //MessageBox.Show("In Continue With of " + ti + " Task " + allPrimes.Length);
+                            // вывод массива простых чисел в textBox
+                            tbPrimes.Text = " ";
+                            if (allPrimes != null)
+                            {
+                                foreach (int prime in allPrimes)
+                                { //MessageBox.Show(prime.ToString()); 
+                                tbPrimes.Text += prime + " ";}
+                                    
+                            }
+                        }
+                        , TaskScheduler.FromCurrentSynchronizationContext()
+                        );
+                    }    
+                    //WaitAny
+                    //Task.WaitAll(tasks);
                     //allPrimes = new int[1];
-                    foreach (Task<int[]> task in tasks)
-                        allPrimes = task.Result.Concat(allPrimes).ToArray();
-                    Array.Sort(allPrimes);
+                    //foreach (Task<int[]> task in tasks)
+                    //    await task;  //allPrimes = task.Result.Concat(allPrimes).ToArray();
+                    ////Array.Sort(allPrimes);
                 }
 
-                if (allPrimes != null)
-                {
-                    foreach (int prime in allPrimes)
-                        tbPrimes.Text += prime + " ";
-                }
+                //if (allPrimes != null)
+                //{
+                //    foreach (int prime in allPrimes)
+                //        tbPrimes.Text += prime + " ";
+                //}
             }
 
             // привести массив primes в SearchForPrimes к приличному виду
