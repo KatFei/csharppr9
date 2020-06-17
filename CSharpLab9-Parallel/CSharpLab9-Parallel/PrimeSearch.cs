@@ -117,11 +117,13 @@ namespace CSharpLab9_Parallel
                 else
                 {
                     tasks = new Task<int[]>[threads];
+                    int step = (end - start) / threads;
                     for (int i = 0; i < threads; i++)
                     {
                         int ti = i;
                         tasks[ti] = Task<int[]>.Run(() //(Task<int[]>)
-                            => SearchForPrimes(start + ti, end, threads));
+                            //настроить правильно интервал, чтобы не резался конец и хватало кол-ва потоков
+                            => SearchForPrimes(start + ti*step, (start + (ti+1) * step)>=end? end: start + (ti + 1) * step -1));      //SearchForPrimes(start + ti, end, threads));
 
                         tasks[ti].ContinueWith(task =>
                         {

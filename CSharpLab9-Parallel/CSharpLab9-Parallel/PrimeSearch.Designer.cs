@@ -63,9 +63,9 @@
             // tbStart
             // 
             this.tbStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbStart.Location = new System.Drawing.Point(101, 39);
+            this.tbStart.Location = new System.Drawing.Point(74, 39);
             this.tbStart.Name = "tbStart";
-            this.tbStart.Size = new System.Drawing.Size(27, 24);
+            this.tbStart.Size = new System.Drawing.Size(58, 24);
             this.tbStart.TabIndex = 2;
             this.tbStart.Text = "0";
             this.tbStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -73,9 +73,9 @@
             // tbEnd
             // 
             this.tbEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbEnd.Location = new System.Drawing.Point(251, 39);
+            this.tbEnd.Location = new System.Drawing.Point(222, 39);
             this.tbEnd.Name = "tbEnd";
-            this.tbEnd.Size = new System.Drawing.Size(27, 24);
+            this.tbEnd.Size = new System.Drawing.Size(56, 24);
             this.tbEnd.TabIndex = 4;
             this.tbEnd.Text = "0";
             this.tbEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -84,7 +84,7 @@
             // 
             this.lblIntervalEnd.AutoSize = true;
             this.lblIntervalEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblIntervalEnd.Location = new System.Drawing.Point(185, 42);
+            this.lblIntervalEnd.Location = new System.Drawing.Point(169, 42);
             this.lblIntervalEnd.Name = "lblIntervalEnd";
             this.lblIntervalEnd.Size = new System.Drawing.Size(38, 18);
             this.lblIntervalEnd.TabIndex = 3;
@@ -110,7 +110,7 @@
             0,
             0});
             this.numUpDThreads.Name = "numUpDThreads";
-            this.numUpDThreads.Size = new System.Drawing.Size(44, 24);
+            this.numUpDThreads.Size = new System.Drawing.Size(51, 24);
             this.numUpDThreads.TabIndex = 6;
             this.numUpDThreads.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numUpDThreads.Value = new decimal(new int[] {
